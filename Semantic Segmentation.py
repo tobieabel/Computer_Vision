@@ -17,7 +17,7 @@ with open(json_path) as f:
 
 # Extract X and Y coordinates if available and update dictionary
 def add_to_dict(data, itr, key, count):
-    try:#pick up here, x_points not being found
+    try:#pick up here, x_points not being founnd
         x_points = data[itr]["regions"][count]["shape_attributes"]["all_points_x"]
         y_points = data[itr]["regions"][count]["shape_attributes"]["all_points_y"]
     except:
