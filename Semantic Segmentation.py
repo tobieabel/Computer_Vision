@@ -27,12 +27,22 @@ for itr in data:
             for it, x in enumerate(x_points):#for each region go thorugh the x and y points and add them to a list
                 all_points.append([x, y_points[it]])
             arr = np.array(all_points, 'int32')#turn the list into an nd array
-            cv2.fillPoly(mask, ([arr]), color=(255))#and paste that nd array on the mask
+            cv2.fillPoly(mask, ([arr]), color=(100))#and paste that nd array on the mask
             arr = 0#clear lists and arrays before processing next region
             all_points = []
     cv2.imwrite(os.path.join(to_save_folder, file_name_png), mask)#save the mask to a new image
 
 
+#from PIL import Image
+
+
+#their_frame = Image.open('/Users/tobieabel/Downloads/ADE_train_00000001.png')
+#np_their_frame = np.array(their_frame.getdata())
+#print (np.amax(np_their_frame))
+#my_frame = Image.open('/Users/tobieabel/Desktop/Ball_TestSeg/Whiteball1001.png')
+#np_my_frame = np.array(my_frame.getdata())
+#print (np.amax(np_my_frame))
+#print('end')
 
 
 
